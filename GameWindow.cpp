@@ -346,13 +346,6 @@ void GameWindow::drawStartScreen(QPainter& painter)
     painter.drawText(QRect(0, 150, SCREEN_WIDTH, 70),
                      Qt::AlignCenter, "Flappy Bird");
 
-    // Podtytuł
-    QFont subFont("Arial", 18);
-    painter.setFont(subFont);
-    painter.setPen(QColor(255, 255, 180));
-    painter.drawText(QRect(0, 240, SCREEN_WIDTH, 50),
-                     Qt::AlignCenter, "C++ / Qt 6");
-
     // Instrukcja
     QFont instrFont("Arial", 15);
     painter.setFont(instrFont);
