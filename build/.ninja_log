@@ -1,0 +1,14 @@
+# ninja log v6
+15	1820	8035045432776942	FlappyBird_autogen/timestamp	aa30be55f86ffb2b
+15	1820	8035045432776942	FlappyBird_autogen/mocs_compilation.cpp	aa30be55f86ffb2b
+15	1820	8035045432776942	C:/Users/ahaah/Desktop/Projekt_FlappyBird/build/FlappyBird_autogen/timestamp	aa30be55f86ffb2b
+15	1820	8035045432776942	C:/Users/ahaah/Desktop/Projekt_FlappyBird/build/FlappyBird_autogen/mocs_compilation.cpp	aa30be55f86ffb2b
+1847	4021	8035045433813415	CMakeFiles/FlappyBird.dir/Ground.cpp.obj	f62f93e54aac8098
+1842	4061	8035045433761423	CMakeFiles/FlappyBird.dir/Pipe.cpp.obj	8845019dad3b4483
+1853	4077	8035045433868616	CMakeFiles/FlappyBird.dir/PipeFactory.cpp.obj	e0912e620e13c66e
+1833	4118	8035045433670409	CMakeFiles/FlappyBird.dir/GameObject.cpp.obj	7edb18397541ccfe
+1837	4200	8035045433704318	CMakeFiles/FlappyBird.dir/Bird.cpp.obj	1cf5522c8eee012b
+1829	4398	8035045433633870	CMakeFiles/FlappyBird.dir/main.cpp.obj	6e6641424de2a3d8
+1826	4423	8035045433591388	CMakeFiles/FlappyBird.dir/FlappyBird_autogen/mocs_compilation.cpp.obj	eacb46e21e35b248
+1857	4659	8035045433908626	CMakeFiles/FlappyBird.dir/GameWindow.cpp.obj	738bc08d3b88b9e9
+4660	4811	8035045461937724	FlappyBird.exe	8341733ffda4cffc
