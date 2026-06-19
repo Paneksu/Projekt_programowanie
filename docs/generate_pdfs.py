@@ -204,7 +204,12 @@ def make_lista_wymagan():
     FS = 8                # font size for all table rows
 
     pdf.h1("Lista wymagan projektu")
-    pdf.bold_line("Projekt:", "Gra 2D typu Flappy Bird")
+    pdf.bold_line("Projekt:", "Gra 2D Flappy Bird w C++/Qt 6")
+    pdf.bold_line("Przedmiot:", "Programowanie II - C++ obiektowy")
+    pdf.bold_line("Prowadzacy:", "dr inz. Marcin Sobota")
+    pdf.bold_line("Uczelnia:", "Politechnika Slaska, Wydzial RMS")
+    pdf.bold_line("Semestr:", "2025/2026, sem. 2")
+    pdf.bold_line("Grupa:", "Olaf Rysiewicz, Dawid Skatula, Szymon Panek")
     pdf.ln(1)
 
     pdf.h2("Wymagania funkcjonalne")
@@ -256,6 +261,10 @@ def make_arkusz_zmian():
 
     pdf.h1("Arkusz zmian")
     pdf.bold_line("Projekt:", "Gra 2D Flappy Bird w C++/Qt 6")
+    pdf.bold_line("Przedmiot:", "Programowanie II - C++ obiektowy")
+    pdf.bold_line("Prowadzacy:", "dr inz. Marcin Sobota")
+    pdf.bold_line("Uczelnia:", "Politechnika Slaska, Wydzial RMS")
+    pdf.bold_line("Semestr:", "2025/2026, sem. 2")
     pdf.bold_line("Grupa:", "Olaf Rysiewicz, Dawid Skatula, Szymon Panek")
     pdf.ln(2)
 
@@ -342,6 +351,10 @@ def make_dziennik_bledow():
 
     pdf.h1("Dziennik bledow")
     pdf.bold_line("Projekt:", "Gra 2D Flappy Bird w C++/Qt 6")
+    pdf.bold_line("Przedmiot:", "Programowanie II - C++ obiektowy")
+    pdf.bold_line("Prowadzacy:", "dr inz. Marcin Sobota")
+    pdf.bold_line("Uczelnia:", "Politechnika Slaska, Wydzial RMS")
+    pdf.bold_line("Semestr:", "2025/2026, sem. 2")
     pdf.bold_line("Grupa:", "Olaf Rysiewicz, Dawid Skatula, Szymon Panek")
     pdf.ln(2)
 
@@ -427,10 +440,12 @@ def make_dokumentacja():
 
     pdf.h1("Dokumentacja projektu")
     pdf.h2("Gra 2D typu Flappy Bird w jezyku C++")
+    pdf.bold_line("Projekt:", "Gra 2D Flappy Bird w C++/Qt 6")
     pdf.bold_line("Przedmiot:", "Programowanie II - C++ obiektowy")
     pdf.bold_line("Prowadzacy:", "dr inz. Marcin Sobota")
     pdf.bold_line("Uczelnia:", "Politechnika Slaska, Wydzial RMS")
     pdf.bold_line("Semestr:", "2025/2026, sem. 2")
+    pdf.bold_line("Grupa:", "Olaf Rysiewicz, Dawid Skatula, Szymon Panek")
     pdf.ln(2)
 
     pdf.h2("Autorzy")
