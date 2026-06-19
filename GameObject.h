@@ -3,12 +3,12 @@
 
 #include <QPainter>
 
-// ============================================================
+
 // Klasa bazowa dla wszystkich obiektów gry.
 // Używamy polimorfizmu - każdy obiekt wie, jak się rysować
 // i jak się aktualizować. Klasy pochodne MUSZĄ zaimplementować
 // metody czysto wirtualne (pure virtual).
-// ============================================================
+
 class GameObject {
 public:
     // Konstruktor domyślny
@@ -17,11 +17,11 @@ public:
     // Konstruktor parametryczny
     GameObject(float x, float y, int width, int height);
 
-    // Wirtualny destruktor - WAŻNE przy dziedziczeniu z polimorfizmem!
+    // Wirtualny destruktor
     // Bez tego delete na wskaźniku bazowym nie wywołałby destruktora pochodnego.
     virtual ~GameObject();
 
-    // Czysto wirtualne metody - klasy pochodne MUSZĄ je zaimplementować
+    // Czysto wirtualne metody
     virtual void draw(QPainter& painter) = 0;
     virtual void update() = 0;
 

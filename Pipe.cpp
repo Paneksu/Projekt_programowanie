@@ -47,61 +47,14 @@ Pipe::~Pipe()
 void Pipe::draw(QPainter& painter)
 {
     int px = static_cast<int>(x);
+    int topEnd      = gapCenterY - gapHeight / 2;
+    int bottomStart = gapCenterY + gapHeight / 2;
 
-    // Kolory rury
-    const QColor pipeGreen(78, 175, 65);
-    const QColor pipeLight(120, 210, 100);
-    const QColor pipeDark (50,  130, 40);
-    const QColor capColor (70,  165, 58);
-
-    // Oblicz granice przerwy
-    int topEnd    = gapCenterY - gapHeight / 2; // dolna krawędź górnej rury
-    int bottomStart = gapCenterY + gapHeight / 2; // górna krawędź dolnej rury
-
+    painter.setBrush(QColor(78, 175, 65));
     painter.setPen(Qt::NoPen);
 
-    // ====== GÓRNA RURA ======
-    if (topEnd > 10) {
-        // Korpus
-        painter.setBrush(pipeGreen);
-        painter.drawRect(px, 0, PIPE_WIDTH, topEnd - 14);
-
-        // Podświetlenie lewej krawędzi (efekt 3D)
-        painter.setBrush(pipeLight);
-        painter.drawRect(px, 0, 9, topEnd - 14);
-
-        // Cień prawej krawędzi
-        painter.setBrush(pipeDark);
-        painter.drawRect(px + PIPE_WIDTH - 6, 0, 6, topEnd - 14);
-
-        // Końcówka (szersza, cappuje rurę od dołu)
-        painter.setBrush(capColor);
-        painter.drawRect(px - 6, topEnd - 14, PIPE_WIDTH + 12, 14);
-        painter.setBrush(pipeLight);
-        painter.drawRect(px - 6, topEnd - 14, 9, 14);
-    }
-
-    // ====== DOLNA RURA ======
-    int bottomBodyH = screenHeight - bottomStart - 14;
-    if (bottomBodyH > 0) {
-        // Końcówka od góry
-        painter.setBrush(capColor);
-        painter.drawRect(px - 6, bottomStart, PIPE_WIDTH + 12, 14);
-        painter.setBrush(pipeLight);
-        painter.drawRect(px - 6, bottomStart, 9, 14);
-
-        // Korpus
-        painter.setBrush(pipeGreen);
-        painter.drawRect(px, bottomStart + 14, PIPE_WIDTH, bottomBodyH);
-
-        // Podświetlenie
-        painter.setBrush(pipeLight);
-        painter.drawRect(px, bottomStart + 14, 9, bottomBodyH);
-
-        // Cień
-        painter.setBrush(pipeDark);
-        painter.drawRect(px + PIPE_WIDTH - 6, bottomStart + 14, 6, bottomBodyH);
-    }
+    painter.drawRect(px, 0, PIPE_WIDTH, topEnd);
+    painter.drawRect(px, bottomStart, PIPE_WIDTH, screenHeight - bottomStart);
 }
 
 void Pipe::update()

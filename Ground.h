@@ -4,11 +4,11 @@
 #include "GameObject.h"
 #include <QRect>
 
-// ============================================================
+
 // Klasa reprezentująca ziemię / podłoże.
 // Dziedziczy po GameObject.
 // Ziemia jest statyczna (nie przesuwa się).
-// ============================================================
+
 class Ground : public GameObject {
 public:
     // Konstruktor domyślny

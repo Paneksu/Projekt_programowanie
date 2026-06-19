@@ -5,12 +5,12 @@
 #include <QRect>
 #include <stdexcept>
 
-// ============================================================
+
 // Klasa reprezentująca parę rur (górna + dolna z przerwą).
 // Dziedziczy po GameObject.
 // Konstruktor rzuca wyjątek jeśli parametry są nieprawidłowe
 // (walidacja danych - wymaganie z laboratorium).
-// ============================================================
+
 class Pipe : public GameObject {
 public:
     // Szerokość rury (stała klasy, public żeby GameWindow mógł jej użyć)

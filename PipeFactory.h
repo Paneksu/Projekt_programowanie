@@ -3,7 +3,7 @@
 
 #include "Pipe.h"
 
-// ============================================================
+
 // Wzorzec projektowy: Fabryka (Factory Method)
 // PipeFactory odpowiada za tworzenie rur z losowymi pozycjami
 // przerwy. Centralizuje logikę generowania przeszkód.
@@ -11,7 +11,7 @@
 // Dzięki fabryce GameWindow nie musi znać szczegółów
 // generowania losowych pozycji - po prostu prosi fabrykę
 // o nową rurę.
-// ============================================================
+
 class PipeFactory {
 public:
     // Konstruktor - przyjmuje parametry ekranu

@@ -19,14 +19,14 @@ enum class GameState {
     GAMEOVER  // ptak zginął
 };
 
-// ============================================================
+
 // Główne okno gry - dziedziczy po QWidget.
 // Odpowiada za:
 //   - pętle gry (via QTimer)
 //   - rysowanie wszystkich obiektów (paintEvent)
 //   - obsługę wejścia gracza (klawiatura / mysz)
 //   - zarządzanie stanem gry i wynikiem
-// ============================================================
+
 class GameWindow : public QWidget {
     Q_OBJECT  // makro Qt wymagane dla systemu sygnałów/slotów
 

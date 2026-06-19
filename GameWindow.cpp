@@ -1,13 +1,11 @@
 #include "GameWindow.h"
 
 #include <QPainter>
-#include <QLinearGradient>
 #include <QFont>
 #include <QRect>
 
-// ============================================================
 // Konstruktor głównego okna gry
-// ============================================================
+
 GameWindow::GameWindow(QWidget* parent)
     : QWidget(parent),
       bird(nullptr),
@@ -33,8 +31,7 @@ GameWindow::GameWindow(QWidget* parent)
     pipeFactory = new PipeFactory(SCREEN_WIDTH, SCREEN_HEIGHT, GROUND_HEIGHT);
 
     // Utwórz timer pętli gry i połącz sygnał timeout ze slotem gameLoop.
-    // WAŻNE: bez connect() timer by tickował ale gameLoop() nigdy nie byłoby
-    // wywołane - to był jeden z pierwszych błędów w projekcie (patrz dziennik błędów).
+   
     gameTimer = new QTimer(this);
     connect(gameTimer, &QTimer::timeout, this, &GameWindow::gameLoop);
     gameTimer->start(16); // ~62.5 FPS (16ms na klatkę)
@@ -55,7 +52,6 @@ GameWindow::~GameWindow()
     }
     pipes.clear();
 
-    // gameTimer jest dzieckiem (this), Qt automatycznie go usunie
 }
 
 // ============================================================
@@ -169,8 +165,6 @@ void GameWindow::gameLoop()
     }
 
     // --- Aktualizuj rury i usuń te, które wyszły za ekran ---
-    // WAŻNE: iterujemy od końca do początku, bo erase() unieważnia
-    // iteratory za usuniętym elementem. To naprawia błąd #2 z dziennika.
     for (int i = static_cast<int>(pipes.size()) - 1; i >= 0; --i) {
         pipes[i]->update();
 
@@ -189,8 +183,6 @@ void GameWindow::gameLoop()
     }
 
     // --- Odśwież widok (wywołuje paintEvent) ---
-    // WAŻNE: bez tego wywołania ekran się nie odświeża!
-    // To był błąd #3 w pierwszej wersji kodu.
     update();
 }
 
@@ -284,29 +276,7 @@ void GameWindow::updateScore()
 // ============================================================
 void GameWindow::drawBackground(QPainter& painter)
 {
-    // Gradient nieba - od niebieskiego u góry do jaśniejszego na dole
-    QLinearGradient skyGrad(0, 0, 0, SCREEN_HEIGHT - GROUND_HEIGHT);
-    skyGrad.setColorAt(0.0, QColor(100, 180, 210));
-    skyGrad.setColorAt(1.0, QColor(175, 225, 240));
-    painter.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, skyGrad);
-
-    // Chmury (proste białe elipsy - bez assetów graficznych)
-    painter.setPen(Qt::NoPen);
-    painter.setBrush(QColor(255, 255, 255, 200));
-
-    // Chmurka 1
-    painter.drawEllipse(40,  55, 85, 32);
-    painter.drawEllipse(75,  42, 60, 28);
-    painter.drawEllipse(110, 58, 45, 22);
-
-    // Chmurka 2
-    painter.drawEllipse(285, 105, 100, 36);
-    painter.drawEllipse(325,  90,  70, 30);
-    painter.drawEllipse(360, 108,  50, 24);
-
-    // Chmurka 3
-    painter.drawEllipse(140, 195, 78, 28);
-    painter.drawEllipse(170, 182, 55, 24);
+    painter.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, QColor(135, 206, 235));
 }
 
 // ============================================================

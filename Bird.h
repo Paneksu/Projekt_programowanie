@@ -4,11 +4,11 @@
 #include "GameObject.h"
 #include <QRect>
 
-// ============================================================
+
 // Klasa reprezentująca ptaka - postać gracza.
 // Dziedziczy po GameObject (polimorfizm).
 // Ptak podlega grawitacji i może skakać.
-// ============================================================
+
 class Bird : public GameObject {
 public:
     // Konstruktor domyślny - ptak w domyślnej pozycji

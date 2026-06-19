@@ -22,24 +22,9 @@ Ground::~Ground()
 
 void Ground::draw(QPainter& painter)
 {
-    int gy = static_cast<int>(y);
-
-    // Pas trawy (zielony)
     painter.setBrush(QColor(80, 170, 70));
     painter.setPen(Qt::NoPen);
-    painter.drawRect(0, gy, screenWidth, 16);
-
-    // Linia oddzielająca trawę od ziemi
-    painter.setBrush(QColor(60, 140, 50));
-    painter.drawRect(0, gy + 14, screenWidth, 4);
-
-    // Ziemia (piaskowo-brązowa)
-    painter.setBrush(QColor(210, 170, 110));
-    painter.drawRect(0, gy + 18, screenWidth, height - 18);
-
-    // Ciemniejszy pas w ziemi (linia podziemna)
-    painter.setBrush(QColor(180, 140, 80));
-    painter.drawRect(0, gy + 30, screenWidth, 8);
+    painter.drawRect(0, static_cast<int>(y), screenWidth, height);
 }
 
 void Ground::update()
